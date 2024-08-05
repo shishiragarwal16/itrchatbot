@@ -1,0 +1,43 @@
+{
+  "intents": [
+    {
+      "tag":"start",
+      "patterns": ["Hi", "Hello", "How are you?","Is anyone there?","Good day", "Yo","How are you doing"],
+      "responses": ["Hello!", "Hi!", "Greetings!", "How can I assist you?"]
+    },
+    {
+      "tag":"stop",
+      "patterns": ["Bye", "See you later", "Goodbye", "Stop", "Terminate"],
+      "responses": ["Goodbye!", "Have a nice day!", "See you later!"]
+    },
+    {
+      "tag": "tax_slab",
+      "patterns": ["What is the income tax slab for 2023?", "Tell me the tax slab rates for 2023", "What are the tax slabs for this year?", "Tax slabs"],
+      "responses": ["Please tell me your yearly income"],
+      "context_set":"asking_yearly_income"
+    },
+    {
+      "tag": "deductions",
+      "patterns": ["What are the deductions available?", "Tell me about tax deductions", "What deductions can I claim?"],
+      "responses": ["You can claim deductions under Section 80C, 80D, etc."]
+    },
+    {
+      "tag": "itr_query",
+      "patterns": ["Which ITR should I fill?", "What ITR form do I need?", "Help me choose an ITR form"],
+      "responses": ["What type of employment are you in? (e.g., salaried, business, etc.)"],
+      "context_set": "asking_employment_type"
+    },
+    {
+      "tag": "employment_type_salaried",
+      "patterns": ["Salaried", "I am salaried", "Salary"],
+      "responses": ["You should fill ITR-1 form."],
+      "context_filter": "asking_employment_type"
+    },
+    {
+      "tag": "employment_type_business",
+      "patterns": ["Business", "I run a business", "Self-employed"],
+      "responses": ["You should fill ITR-3 or ITR-4 form."],
+      "context_filter": "asking_employment_type"
+    }
+  ]
+}
