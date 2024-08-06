@@ -1,20 +1,21 @@
 {
   "intents": [
     {
-      "tag":"start",
-      "patterns": ["Hi", "Hello", "How are you?","Is anyone there?","Good day", "Yo","How are you doing"],
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "How are you?", "Is anyone there?", "Good day"],
       "responses": ["Hello!", "Hi!", "Greetings!", "How can I assist you?"]
     },
     {
-      "tag":"stop",
-      "patterns": ["Bye", "See you later", "Goodbye", "Stop", "Terminate"],
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
       "responses": ["Goodbye!", "Have a nice day!", "See you later!"]
     },
     {
       "tag": "tax_slab",
-      "patterns": ["What is the income tax slab for 2023?", "Tell me the tax slab rates for 2023", "What are the tax slabs for this year?", "Tax slabs"],
-      "responses": ["Please tell me your yearly income"],
-      "context_set":"asking_yearly_income"
+      "patterns": ["What is the income tax slab for 2024?", "Tell me the tax slab rates for 2024", "What are the tax slabs for this year?"],
+      "responses": [
+        "The income tax slab for 2024 is as follows:\nFrom 0 to 3,00,000 ---- 0%\nFrom 3,00,001 to 7,00,000 ---- 5%\nFrom 7,00,001 to 10,00,000 ---- 10%\nFrom 10,00,001 to 12,00,000 ---- 15%\nFrom 12,00,001 to 15,00,000 ---- 20%\nFrom 15,00,001 and above ---- 30%"
+      ]
     },
     {
       "tag": "deductions",
